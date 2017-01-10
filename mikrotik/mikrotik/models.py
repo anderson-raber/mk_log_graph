@@ -16,11 +16,12 @@ from django.db import models
 
 #testando git 2
 
-class Firewall(models.Model):
+class Firewall_Info(models.Model):
     """classe para armazenar trafego no firewall com NAT"""
     data = models.DateField()
     hora = models.TimeField()
-    LogPrefix = models.CharField(max_length=50, null=True)
+    topics = models.CharField(max_length=50, null=True)
+    syslog_severity = models.CharField(max_length=50, null=True)
     src_zone = models.CharField(max_length=50, null=True)
     dst_zone = models.CharField(max_length=50, null=True)
     src_mac = models.CharField(max_length=50, null=True)
@@ -44,10 +45,12 @@ class Firewall(models.Model):
 # via %{WORD:src_type}
 
 
-class FirewallLogin(models.Model):
+class Firewall_Login(models.Model):
     """classe para armazenar login/logout"""
     data = models.DateField()
     hora = models.TimeField()
+    topics = models.CharField(max_length=50, null=True)
+    syslog_severity = models.CharField(max_length=50, null=True)
     user = models.CharField(max_length=50, null=True)
     logged = models.CharField(max_length=50, null=True)
     src_ip = models.CharField(max_length=50, null=True)
@@ -60,10 +63,12 @@ class FirewallLogin(models.Model):
 #via %{WORD:src_type}
 
 
-class FirewallLoginError(models.Model):
+class Firewall_Login_Error(models.Model):
     """classe para BD armazenar erros de autenticacao login/senha"""
     data = models.DateField()
     hora = models.TimeField()
+    topics = models.CharField(max_length=50, null=True)
+    syslog_severity = models.CharField(max_length=50, null=True)
     user = models.CharField(max_length=50, null=True)
     src_ip = models.CharField(max_length=50, null=True)
     src_type = models.CharField(max_length=50, null=True)

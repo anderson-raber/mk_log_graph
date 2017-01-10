@@ -1,0 +1,15 @@
+nov/25 22:30:03 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:40502->31.13.73.3:443, len 60 
+nov/25 22:30:03 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:51323->216.58.202.42:443, len 60 
+nov/25 22:30:03 firewall,info forward: in:dhcp-roteador out:ether1, src-mac 48:59:29:fe:a2:5d, proto TCP (SYN), 10.0.0.77:44978->31.13.73.3:443, len 60 
+nov/25 22:30:03 firewall,info forward: in:dhcp-roteador out:ether1, src-mac 48:59:29:fe:a2:5d, proto TCP (SYN), 10.0.0.77:46098->31.13.73.37:443, len 60 
+nov/25 22:30:04 firewall,info forward: in:dhcp-roteador out:ether1, src-mac 48:59:29:fe:a2:5d, proto TCP (SYN), 10.0.0.77:40899->216.58.202.42:443, len 60 
+nov/25 22:30:04 firewall,info srcnat: in:(none) out:ether1, src-mac bc:b3:08:99:dc:7a, proto UDP, 10.0.0.74:59961->8.8.8.8:53, len 64 
+nov/25 22:30:04 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:46820->31.13.73.1:443, len 60 
+nov/25 22:30:04 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:46821->31.13.73.1:443, len 60 
+nov/25 22:30:05 firewall,info forward: in:dhcp-roteador out:ether1, src-mac 48:59:29:fe:a2:5d, proto TCP (SYN), 10.0.0.77:40899->216.58.202.42:443, len 60 
+nov/25 22:30:05 firewall,info forward: in:dhcp-roteador out:ether1, src-mac 48:59:29:fe:a2:5d, proto TCP (SYN), 10.0.0.77:38478->64.233.190.188:5228, len 60 
+nov/25 22:30:05 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:40140->157.240.0.32:443, len 60 
+nov/25 22:30:05 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:46820->31.13.73.1:443, len 60 
+nov/25 22:30:05 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:50725->157.240.0.36:443, len 60 
+nov/25 22:30:05 firewall,info forward: in:dhcp-roteador out:ether1, src-mac bc:b3:08:99:dc:7a, proto TCP (SYN), 10.0.0.74:42679->31.13.73.37:443, len 60 
+jan/07/1970 03:11:27 system,error,critical login failure for user admin from 192.168.0.16 via web

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for mikrotik project.
 
@@ -11,6 +12,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import os.path
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,6 +30,11 @@ SECRET_KEY = 'j)^l1z=($%o3=ifkpoy9x8+k@+s39=rn%b2jru01r#bfogprt@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+ADMINS = (
+    #('nome', 'email'),
+)
 
 ALLOWED_HOSTS = []
 
@@ -31,6 +42,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'debug_toolbar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,9 +60,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mikrotik.urls'
+
+INTERNAL_IPS = ('127.0.0.1',)
 
 TEMPLATES = [
     {
@@ -59,6 +74,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                #'django.template.context_processors.media'
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -70,6 +86,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mikrotik.wsgi.application'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader')
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -123,3 +148,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+#TEMPLATE_DIRS = (
+ #  os.path.join(PROJECT_PATH + 'templates'),
+#)
